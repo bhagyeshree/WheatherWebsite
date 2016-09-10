@@ -1,0 +1,41 @@
+import java.io.IOException;
+import java.util.Random;
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) throws InterruptedException {
+
+		
+		new Thread(new Runnable() {@Override
+			public void run() {
+				try {
+					
+				    Random rand = new Random();
+				    int port = rand.nextInt((65535 - 1) + 1) + 1;
+
+				    ServerInfoWebsite server = new ServerInfoWebsite(port);
+					
+
+				} catch (IOException e) {} catch (InterruptedException e) {
+
+				}
+			}
+		}).start();
+		
+		
+		while (true) {
+			
+			Thread.sleep(500);
+
+			// getting the commands from the user
+			System.out.print(">> ");
+			Scanner scanner = new Scanner(System. in );
+			String command = scanner.nextLine();
+
+			System.out.println(command);
+
+		}
+	}
+
+}

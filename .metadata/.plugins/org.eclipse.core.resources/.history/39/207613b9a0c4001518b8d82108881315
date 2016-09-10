@@ -1,0 +1,48 @@
+import java.io.IOException;
+import java.net.InetAddress;
+import java.net.UnknownHostException;
+import java.util.Random;
+import java.util.Scanner;
+
+public class Main {
+	
+	public static ServerInfoWebsite server;
+	public static int port;
+
+	public static void main(String[] args) throws InterruptedException, UnknownHostException {
+
+	    Random rand = new Random();
+	    port = rand.nextInt((65535 - 1) + 1) + 1;
+
+		
+		new Thread(new Runnable() {@Override
+			public void run() {
+				try {
+					
+     				server = new ServerInfoWebsite(port);
+				    
+				} catch (IOException e) {} catch (InterruptedException e) {
+
+				}
+			}
+		}).start();
+		
+		
+		while (true) {
+			
+			Thread.sleep(500);
+
+			// getting the commands from the user
+			System.out.print(">> ");
+			Scanner scanner = new Scanner(System. in );
+			String command = scanner.nextLine();
+
+			Client client = new Client(InetAddress.getLocalHost().getHostAddress(),port,server);
+			
+			
+			System.out.println(command);
+
+		}
+	}
+
+}

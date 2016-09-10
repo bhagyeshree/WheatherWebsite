@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move &apos;WeatherAnalyticsDisplay.jsp&apos; to &apos;WEB-INF&apos;" description="Move &apos;WeatherAnalyticsDisplay.jsp&apos; to &apos;WEB-INF&apos;" destination="WebContent/WEB-INF" element1="/WheatherWbsite/WebContent/WEB-INF/WeatherAnalyticsDisplay.jsp" flags="7" id="org.eclipse.ltk.core.refactoring.move.resources" resources="1" stamp="1456083863841" updateReferences="true"/>
+</session>

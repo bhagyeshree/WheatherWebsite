@@ -1,0 +1,39 @@
+CREATE DATABASE weather;
+
+DROP TABLE IF EXISTS TEMPERATURE;
+DROP TABLE IF EXISTS city;
+
+create table CITY(
+cityID BIGINT,
+cityName VARCHAR(20), 
+country VARCHAR(20),
+cityLocationLatitude DOUBLE PRECISION,
+cityLocationLongitude DOUBLE PRECISION,
+PRIMARY KEY (cityID)
+);
+
+
+
+CREATE TABLE TEMPERATURE
+(
+  cityid bigint,
+  date date,
+  pressure double precision,
+  humidity bigint,
+  min double precision,
+  max double precision,
+  day double precision,
+  night double precision,
+  evening double precision,
+  morning double precision,
+  speed double precision,
+  winddegree bigint,
+  clouds bigint,
+  weatherid bigint,
+  weathermain character varying(50),
+  description character varying(50),
+  icon character varying(50),
+  FOREIGN KEY (cityid) REFERENCES CITY(cityid)
+);
+
+
